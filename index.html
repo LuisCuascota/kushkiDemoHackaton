@@ -10,7 +10,7 @@
     label { display: block; margin-top: 1em; }
     input, textarea { width: 100%; padding: 0.5em; margin-top: 0.2em; }
     button { margin-top: 1em; padding: 0.7em 1.5em; }
-    #respuesta { border: 1px solid #ccc; padding: 1em; background: #f9f9f9; min-height: 2em; }
+    #respuesta { border: 1px solid #ccc; padding: 1em; background: #f9f9f9; min-height: 2em; white-space: pre-wrap; }
   </style>
 </head>
 <body>
@@ -67,9 +67,9 @@
         const json = await resp.json();
         respuestaDiv.textContent = JSON.stringify(json, null, 2);
       } catch (err) {
-        respuestaDiv.textContent = 'Error: ' + err;
+        respuestaDiv.textContent = 'Error: ' + err.message;
       }
     });
   </script>
 </body>
-</html> 
+</html>
